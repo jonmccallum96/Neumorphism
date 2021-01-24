@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: #ebeef6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .btn {
+        margin: 10px;
+        color: #53565c;
+
+        padding: 10px 25px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
+          -5px -5px 10px rgb(255, 255, 255);
+        cursor: pointer;
+        transition: 0.1s;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      .btn:hover {
+        box-shadow: none;
+      }
+
+      .btn:hover > .btn__text {
+        transform: scale(0.95);
+      }
+
+      .btn:active {
+        box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25),
+          inset -5px -5px 10px rgb(255, 255, 255);
+      }
+
+      .btn:active .btn__text {
+        transform: scale(0.9);
+      }
+
+      .btn__text {
+        display: flex;
+        transition: 0.2s;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <p>Satisfying Neumorphism Button</p>
+
+    <div class="btn" id="btn"><p class="btn__text">QUICK TAP</p></div>
+
+    <script>
+      const btn = document.getElementById('btn');
+
+      btn.addEventListener('click', () => {
+        window.navigator.vibrate(50);
+      });
+    </script>
+  </body>
+</html>
